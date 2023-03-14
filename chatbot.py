@@ -1,7 +1,7 @@
 from fbchat import Client
 from fbchat.models import *
 
-client = Client('kirdemir.ekrem@gmail.com', '<ortabayir123>')
+client = Client('<kirdemir.ekrem@gmail.com>', '<ortabayir123>')
 
 # Send a message to a user
 client.send(Message(text='Hello, world!'), thread_id='<ekrem.kirdemir>', thread_type=ThreadType.USER)
