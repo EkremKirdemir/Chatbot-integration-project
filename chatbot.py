@@ -4,10 +4,10 @@ import facebook
 import requests
 access_token = 'EAAvlbQDWvOkBAHpitAmVmSS7GCmzsEftuwc8ZAZAFCJzZBGcsxTA9KWPXzVCmiJI0eFqnFig5y5zKfL9a0rLAAIwrRW87VKOzTH93ihZBxt1GXCnttPo7BqZB8iKSo7ZBdiNS2Qe0MfeZA0faBbgVvZB7xZB37rBaxCCaLMRHtOQMgMnIqtvvjCK8ZCIXyyNgT1wDHSTn0ISktuTGmJrd5EzQ9bdap6ZAoWcUMZD'
 graph = facebook.GraphAPI(access_token)
-
-# Make an API request using the Graph API object
 result = graph.get_object('/me/friends')
 print(result)
+
+
 recipient_id = 'kirdemirekrem'
 params = {
     'access_token': access_token,
@@ -16,13 +16,11 @@ params = {
 }
 data = {'text': 'message'}
 
-# Send the direct message
+
 url = f'https://graph.instagram.com/{recipient_id}/messages?access_token={access_token}'
 response = requests.post(url, data=data)
-# Send the direct message
-# response = requests.post(url, params=params)
 
-# Check the response status code
+# response = requests.post(url, params=params)
 if response.status_code == 200:
     print('Direct message sent successfully!')
 else:
