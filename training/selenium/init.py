@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 
 # Replace with the path to your ChromeDriver executable
@@ -31,9 +32,8 @@ for x in driver.find_elements_by_tag_name("button"):
     if x.text == 'Şimdi Değil':
         x.click()
 
-# conversation = driver.find_element_by_css_selector('div._7UhW9.xLCgt.qyrsm.KV-D4.uL8Hv')
-conversation_name = "Görkem Koç"
-conversation = driver.find_element_by_xpath("//*[contains(text(), '{}')]".format(conversation_name))
+conversations = driver.find_elements(By.XPATH, "//div[contains(@class, 'x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs xt0psk2 x1i0vuye xvs91rp xo1l8bm x5n08af x10wh9bi x1wdrske x8viiok x18hxmgj')]")
+conversation = driver.find_element_by_xpath("//*[contains(text(), '{}')]".format(conversations[0].text))
 conversation.click()
 
 # Wait for the conversation to load and send a message
